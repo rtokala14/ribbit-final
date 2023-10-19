@@ -1,9 +1,10 @@
+import Navbar from "@/components/navbar";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="">
+      <Navbar />
       <Button>Hi</Button>
     </main>
   );
