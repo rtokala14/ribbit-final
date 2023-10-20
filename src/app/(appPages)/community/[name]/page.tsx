@@ -41,42 +41,6 @@ export default async function Page({
             <Post postData={post} />
           </Link>
         ))}
-        {posts.map((post) => (
-          <Link
-            className=" w-full max-w-4xl mx-4"
-            key={`post-${post.id}`}
-            href={`/post/${post.id}`}
-          >
-            <Post postData={post} />
-          </Link>
-        ))}
-        {posts.map((post) => (
-          <Link
-            className=" w-full max-w-4xl mx-4"
-            key={`post-${post.id}`}
-            href={`/post/${post.id}`}
-          >
-            <Post postData={post} />
-          </Link>
-        ))}
-        {posts.map((post) => (
-          <Link
-            className=" w-full max-w-4xl mx-4"
-            key={`post-${post.id}`}
-            href={`/post/${post.id}`}
-          >
-            <Post postData={post} />
-          </Link>
-        ))}
-        {posts.map((post) => (
-          <Link
-            className=" w-full max-w-4xl mx-4"
-            key={`post-${post.id}`}
-            href={`/post/${post.id}`}
-          >
-            <Post postData={post} />
-          </Link>
-        ))}
       </div>
     </div>
   );
