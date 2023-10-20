@@ -1,4 +1,5 @@
 import Post from "@/components/Post";
+import NestedLink from "@/components/nested-link";
 import {
   Card,
   CardContent,
@@ -7,9 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { extensionList } from "@/lib/utils";
 import { getPost } from "@/server/serverActions";
-import { generateHTML } from "@tiptap/react";
 import Link from "next/link";
 
 export default async function Page({
@@ -27,19 +26,15 @@ export default async function Page({
     <Card className=" w-full max-w-4xl mx-4">
       <CardHeader>
         <CardTitle>{postData.title}</CardTitle>
-        <CardDescription>
-          <Link
+        <CardDescription className=" flex items-center gap-2">
+          <NestedLink
             href={`/user/${postData.username}`}
-            className=" hover:underline"
-          >
-            {`u/${postData.username}`}
-          </Link>
-          <Link
-            className=" hover:underline ml-2"
+            text={`u/${postData.username}`}
+          />
+          <NestedLink
             href={`/community/${postData.community.name}`}
-          >
-            {`c/${postData.community.name}`}
-          </Link>
+            text={`c/${postData.community.name}`}
+          />
         </CardDescription>
         <Separator />
       </CardHeader>

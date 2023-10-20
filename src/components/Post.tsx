@@ -1,26 +1,58 @@
 "use client";
 
-import { extensionList } from "@/lib/utils";
-import { generateHTML } from "@tiptap/react";
+import Link from "next/link";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
+import { Separator } from "./ui/separator";
+import { Button } from "./ui/button";
+import NestedLink from "./nested-link";
 
-export default function Post({ content }: { content: JSON }) {
-  if (typeof window !== "undefined") {
-    const renderData = generateHTML(content, extensionList);
-  }
+export default function Post({
+  postData,
+}: {
+  postData: {
+    title: string | null;
+    username: string | null;
+    content: string | null;
+    id: number;
+    communityId: number | null;
+    createdAt: Date | null;
+    author: string | null;
+    community: {
+      id: number;
+      name: string | null;
+      description: string | null;
+      createdAt: Date | null;
+      author: string | null;
+    } | null;
+  };
+}) {
   return (
-    <>
-      {typeof window !== "undefined" ? (
+    <Card className=" w-full max-w-4xl mx-4 mb-2">
+      <CardHeader>
+        <CardTitle>{postData.title}</CardTitle>
+        <CardDescription className=" flex items-center gap-2">
+          <NestedLink
+            href={`/user/${postData.username}`}
+            text={`u/${postData.username}`}
+          />
+          <NestedLink
+            href={`/community/${postData.community?.name}`}
+            text={`c/${postData.community?.name}`}
+          />
+        </CardDescription>
+        <Separator />
+      </CardHeader>
+      <CardContent>
         <div
-          dangerouslySetInnerHTML={{
-            __html: generateHTML(content, extensionList),
-          }}
-        >
-          {/* hi */}
-        </div>
-      ) : (
-        <div>Hi</div>
-      )}
-    </>
+          dangerouslySetInnerHTML={{ __html: postData.content as string }}
+        ></div>
+      </CardContent>
+    </Card>
   );
-  //   return <div>hi</div>;
 }
