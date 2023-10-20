@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import {
   Tooltip,
   TooltipContent,
@@ -20,6 +20,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Skeleton } from "./ui/skeleton";
 
 const Navbar = async () => {
   const currUser = await currentUser();
@@ -56,7 +57,9 @@ const Navbar = async () => {
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger>
-              <ThemeChanger />
+              <Suspense fallback={<Skeleton className=" h-6 w-6" />}>
+                <ThemeChanger />
+              </Suspense>
             </TooltipTrigger>
             <TooltipContent>
               <p>Toggle Theme</p>
@@ -82,7 +85,7 @@ const Navbar = async () => {
             <DropdownMenuTrigger asChild>
               <Button variant={"outline"}>
                 <Avatar className="h-8 w-8">
-                  <AvatarImage src={currUser.profileImageUrl} />
+                  <AvatarImage src={currUser.imageUrl} />
                   <AvatarFallback>{`${currUser.firstName?.charAt(
                     0
                   )}${currUser.lastName?.charAt(0)}`}</AvatarFallback>
@@ -119,7 +122,7 @@ const Navbar = async () => {
           </DropdownMenu>
         ) : (
           <>
-            <Button asChild variant={"outline"}>
+            <Button asChild variant={"default"}>
               <Link href="/sign-in">Sign In</Link>
             </Button>
             {/* <Button asChild>

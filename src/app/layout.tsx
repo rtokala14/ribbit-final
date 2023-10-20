@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/toaster";
 
 const fontSans = FontSans({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -22,12 +23,13 @@ export default function RootLayout({
       <html suppressHydrationWarning lang="en">
         <body
           className={cn(
-            "min-h-screen bg-background flex flex-col overflow-x-hidden font-sans antialiased",
+            "min-h-screen bg-background flex flex-col overflow-x-hidden font-sans items-center antialiased",
             fontSans.variable
           )}
         >
           <ThemeProvider attribute="class" defaultTheme="light">
             {children}
+            <Toaster />
           </ThemeProvider>
         </body>
       </html>
