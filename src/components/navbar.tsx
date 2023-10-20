@@ -25,12 +25,12 @@ import { Skeleton } from "./ui/skeleton";
 const Navbar = async () => {
   const currUser = await currentUser();
   return (
-    <div className=" sticky top-0 w-screen h-12 justify-between flex items-center border-b-border border-b p-2 bg-secondary">
+    <div className=" sticky shadow-lg top-0 w-screen h-12 justify-between flex items-center border-b-border border-b p-2 bg-secondary">
       <div className=" justify-start flex items-center">
         <Button
           variant={"ghost"}
           asChild
-          className=" text-2xl text-primary font-extrabold tracking-tight lg:text-3xl"
+          className=" text-2xl font-extrabold tracking-tight lg:text-3xl"
         >
           <Link href="/">Ribbit</Link>
         </Button>

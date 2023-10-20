@@ -23,7 +23,7 @@ export default async function Page({
   const postData = JSON.parse(postDataRes).content;
 
   return (
-    <Card className=" w-full max-w-4xl mx-4">
+    <Card className=" bg-secondary w-full max-w-4xl mx-4">
       <CardHeader>
         <CardTitle>{postData.title}</CardTitle>
         <CardDescription className=" flex items-center gap-2">
@@ -36,7 +36,7 @@ export default async function Page({
             text={`c/${postData.community.name}`}
           />
         </CardDescription>
-        <Separator />
+        <Separator className=" bg-primary" />
       </CardHeader>
       <CardContent>
         <div dangerouslySetInnerHTML={{ __html: postData.content }}></div>

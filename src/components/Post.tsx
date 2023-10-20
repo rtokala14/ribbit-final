@@ -1,6 +1,3 @@
-"use client";
-
-import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -9,7 +6,6 @@ import {
   CardTitle,
 } from "./ui/card";
 import { Separator } from "./ui/separator";
-import { Button } from "./ui/button";
 import NestedLink from "./nested-link";
 
 export default function Post({
@@ -33,7 +29,7 @@ export default function Post({
   };
 }) {
   return (
-    <Card className=" w-full max-w-4xl mx-4 mb-2">
+    <Card className=" w-full shadow-sm bg-secondary mb-2">
       <CardHeader>
         <CardTitle>{postData.title}</CardTitle>
         <CardDescription className=" flex items-center gap-2">
@@ -46,7 +42,7 @@ export default function Post({
             text={`c/${postData.community?.name}`}
           />
         </CardDescription>
-        <Separator />
+        <Separator className=" bg-primary" />
       </CardHeader>
       <CardContent>
         <div
