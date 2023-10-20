@@ -6,8 +6,8 @@ export default authMiddleware({
     "/profile/",
     "/sign-in",
     "/sign-up",
-    "/community/*",
-    "/post/*",
+    "/community/",
+    "/post/",
   ],
 
   signInUrl: "/sign-in",
