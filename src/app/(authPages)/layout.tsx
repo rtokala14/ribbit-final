@@ -14,7 +14,7 @@ export default function RootLayout({
     <>
       <div>
         <Link
-          className="absolute text-4xl select-none w-screen text-center font-extrabold"
+          className="text-4xl select-none w-screen text-center font-extrabold"
           href="/"
         >
           Ribbit
