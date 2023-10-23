@@ -14,8 +14,9 @@ export default function NestedLink({
     <button
       className=" hover:underline"
       onClick={(e) => {
-        router.push(href);
+        e.preventDefault();
         e.stopPropagation();
+        router.push(href);
       }}
     >
       {text}

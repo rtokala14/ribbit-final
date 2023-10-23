@@ -33,7 +33,7 @@ export const extensionList = [
     codeBlock: {
       HTMLAttributes: {
         class:
-          "[&>code]:relative [&>code]:rounded [&>code]:bg-muted [&>code]:px-[0.3rem] [&>code]:py-[0.2rem] [&>code]:font-mono [&>code]:text-sm [&>code]:font-semibold",
+          "[&>code]:relative [&>code]:rounded [&>code]:bg-background [&>code]:px-[0.3rem] [&>code]:py-[0.2rem] [&>code]:font-mono [&>code]:text-sm [&>code]:font-semibold",
       },
       exitOnArrowDown: true,
     },

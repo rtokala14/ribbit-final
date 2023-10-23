@@ -82,7 +82,7 @@ export default function PostForm() {
     editorProps: {
       attributes: {
         class:
-          "rounded-md border min-h-[150px] border-input bg-background px-3 py-2 shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+          "rounded-md border min-h-[150px] border-input bg-secondary px-3 py-2 shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
       },
     },
     // onUpdate({ editor }) {

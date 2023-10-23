@@ -26,9 +26,6 @@ export default function Tiptap({
         <br />
         {editor?.storage.characterCount.words()} words
       </FormDescription>
-      <div className="">
-        <p dangerouslySetInnerHTML={{ __html: editor?.getHTML()! }}></p>
-      </div>
     </div>
   );
 }
