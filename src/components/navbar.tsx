@@ -41,7 +41,7 @@ const Navbar = async () => {
             <TooltipTrigger asChild>
               <Button asChild variant={"outline"} size={"icon"}>
                 <a
-                  href="https://github.com/rtokala14/ribbit-next13"
+                  href="https://github.com/rtokala14/ribbit-final"
                   target="_blank"
                   rel=" noreferrer"
                 >
@@ -99,7 +99,7 @@ const Navbar = async () => {
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
                 <DropdownMenuItem className=" hover:cursor-pointer" asChild>
-                  <Link href={"/profile"}>Profile</Link>
+                  <Link href={`/user/${currUser.username}`}>Profile</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className=" hover:cursor-pointer" asChild>
                   <Link href={"/settings"}>User Settings</Link>

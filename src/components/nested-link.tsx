@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
 
 export default function NestedLink({
   href,
@@ -10,13 +9,16 @@ export default function NestedLink({
   href: string;
   text: string;
 }) {
+  const router = useRouter();
   return (
-    <Link
+    <button
       className=" hover:underline"
-      href={href}
-      onClick={(e) => e.stopPropagation()}
+      onClick={(e) => {
+        router.push(href);
+        e.stopPropagation();
+      }}
     >
       {text}
-    </Link>
+    </button>
   );
 }
