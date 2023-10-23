@@ -1,6 +1,8 @@
 import Post from "@/components/Post";
 import Navbar from "@/components/navbar";
 import { db } from "@/server/db";
+import { postTable } from "@/server/db/schema";
+import { desc } from "drizzle-orm";
 import Link from "next/link";
 
 export default async function Home() {
@@ -8,6 +10,7 @@ export default async function Home() {
     with: {
       community: true,
     },
+    orderBy: desc(postTable.createdAt),
   });
   return (
     <main className="">

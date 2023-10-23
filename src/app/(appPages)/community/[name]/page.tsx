@@ -1,7 +1,7 @@
 import Post from "@/components/Post";
 import { db } from "@/server/db";
 import { communityTable, postTable } from "@/server/db/schema";
-import { eq } from "drizzle-orm";
+import { desc, eq } from "drizzle-orm";
 import Link from "next/link";
 
 export default async function Page({
@@ -18,6 +18,7 @@ export default async function Page({
         with: {
           community: true,
         },
+        orderBy: desc(postTable.createdAt),
       },
     },
   });
